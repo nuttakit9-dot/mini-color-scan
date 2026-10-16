@@ -1,0 +1,40 @@
+ที่มาของข้อมูลสีและใบอนุญาต / Data sources and licenses
+
+1) AK, Army Painter (รวม Warpaints Fanatic), Vallejo, Kimera Kolors, Citadel
+   ข้อมูลรหัสสี (hex) มาจากโครงการ "miniature-paints" โดย Rick Fleuren
+   https://github.com/Arcturus5404/miniature-paints
+   ใบอนุญาต MIT ฉบับเต็ม:
+
+MIT License
+
+Copyright (c) 2022 Rick Fleuren
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+2) Ionic (AMMO by Mig Jimenez)
+   22 สีจากชุด Basic และ Expansion อ่านค่าจากภาพกล่องสินค้า จึงเป็นค่าประมาณ
+
+3) ไทยโทน (THAITONE 2.0)
+   ระบบชื่อสีไทยดั้งเดิมของ อ.ไพโรจน์ พิทยเมธี
+   รหัส hex มาจากการแปลงจาก CMYK แบบไม่เป็นทางการของ poakpong.com
+   https://poakpong.com/node/1998
+
+ชื่อยี่ห้อและชื่อสีทั้งหมดเป็นเครื่องหมายการค้าของเจ้าของแต่ละราย แอปนี้ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจากแบรนด์ใด
+ค่าสีบนหน้าจอเป็นค่าประมาณ ไม่ตรงกับสีจริงในขวดเสมอไป
