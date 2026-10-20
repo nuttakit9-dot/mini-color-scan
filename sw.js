@@ -1,11 +1,39 @@
-const V="mcs-v2";
-const FILES=["./","index.html","manifest.webmanifest","icon-192.png","icon-512.png","LICENSE-THIRD-PARTY.txt"];
-self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)));self.skipWaiting()});
-self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))));self.clients.claim()});
-self.addEventListener("fetch",e=>{
-  if(e.request.method!=="GET")return;
-  e.respondWith(fetch(e.request).then(r=>{
-    if(new URL(e.request.url).origin===location.origin){const c=r.clone();caches.open(V).then(x=>x.put(e.request,c))}
-    return r;
-  }).catch(()=>caches.match(e.request).then(m=>m||caches.match("index.html"))));
+/* Miniature Paint Scanner PWA service worker — v4.2
+ * Cache only the app shell and local assets. External fonts/analytics are not cached.
+ */
+const CACHE_NAME = 'miniature-paint-scanner-v4-2';
+const APP_SHELL = [
+  './',
+  './index.html',
+  './manifest.webmanifest',
+  './icon-192.png',
+  './icon-512.png',
+  './LICENSE-THIRD-PARTY.txt'
+];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
+  self.skipWaiting();
+});
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(
+    keys.filter(key => key.startsWith('miniature-paint-scanner-') && key !== CACHE_NAME)
+      .map(key => caches.delete(key))
+  )));
+  self.clients.claim();
+});
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  event.respondWith(caches.match(request).then(cached => {
+    if (cached) return cached;
+    return fetch(request).then(response => {
+      if (response && response.ok && (request.destination === 'document' || request.destination === 'script' || request.destination === 'style' || request.destination === 'image')) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+      }
+      return response;
+    }).catch(() => caches.match('./index.html'));
+  }));
 });
