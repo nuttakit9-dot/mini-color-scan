@@ -1,7 +1,7 @@
-/* Miniature Paint Scanner PWA service worker — v4.2
+/* Miniature Paint Scanner PWA service worker — v3
  * Cache only the app shell and local assets. External fonts/analytics are not cached.
  */
-const CACHE_NAME = 'miniature-paint-scanner-v4-2';
+const CACHE_NAME = 'miniature-paint-scanner-v4-3';
 const APP_SHELL = [
   './',
   './index.html',

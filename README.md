@@ -62,8 +62,8 @@
 - แท็บแนะนำสีที่ต้องใช้ AI ถูกปิดไว้ในชุดนี้ และไม่จำเป็นต่อฟังก์ชันหลัก
 
 
-## v4.2 QA fixes
-
-- Restored the canonical internal brand key `Citadel`; the UI label is `Warhammer Colour (Citadel)`. This prevents matching, brand filters, and legacy saved ownership from breaking because of a display-name change.
-- Updated the service worker cache version to `miniature-paint-scanner-v4-2`.
-- Kept the existing color database intact; this release does not claim a full official catalog refresh.
+## v4.3 UI refresh
+- Modernized visual styling with a cleaner studio-like layout, wider desktop canvas, refreshed color tokens, softer card surfaces, and clearer spacing.
+- Updated the navigation to a horizontally scrollable sticky tab bar that remains usable with all seven tools on mobile and desktop.
+- Improved input focus states, button hover feedback, responsive spacing, and dark-mode styling.
+- Presentation-only CSS changes; existing tool IDs, data records, and app logic are preserved.
